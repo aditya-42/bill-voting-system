@@ -17,6 +17,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     header("Location: dashboard.php");
     exit();
 }
+
+require_once '../views/header.php'; 
 ?>
 
 <!DOCTYPE html>
@@ -24,8 +26,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>Edit Bill</title>
+    <link rel="stylesheet" href="../style.css"> 
 </head>
 <body>
+    <main class="edit-bill-page">
     <h2>Edit Bill - <?php echo htmlspecialchars($bill['title'] ?? ''); ?></h2>
     <form method="post">
         <label>Title:</label>
@@ -48,6 +52,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <?php else: ?>
         <p>No previous versions available.</p>
     <?php endif; ?>
-    <a href="dashboard.php">Back to Dashboard</a>
+    <a class="back-link" href="dashboard.php">Back to Dashboard</a>
+    </main>
+
+    
 </body>
 </html>
+
+<?php require_once '../views/footer.php'; ?>
+

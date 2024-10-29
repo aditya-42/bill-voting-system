@@ -99,5 +99,36 @@
                 "author": "mp"
             }
         ]
+    },
+    {
+        "id": "67212c9e12bb4",
+        "title": "New Bill Proposed by Smith",
+        "description": "Hi this is new bill",
+        "author": "Smith",
+        "status": "Draft",
+        "created_at": "2024-10-29 19:42:38",
+        "amendments": []
+    },
+    {
+        "id": "6721375ddc99a",
+        "title": "BILL BY MP2",
+        "description": "This bill is by mp2 done on tuesday",
+        "author": "MP2",
+        "status": "voting",
+        "created_at": "2024-10-29 20:28:29",
+        "amendments": [],
+        "versions": [
+            {
+                "title": "BILL BY MP2",
+                "description": "This bill is by mp2",
+                "timestamp": "2024-10-29T20:29:14",
+                "author": "MP2"
+            }
+        ],
+        "votes": {
+            "for": 2,
+            "against": 1,
+            "abstain": 0
+        }
     }
 ]

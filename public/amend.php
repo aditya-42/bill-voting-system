@@ -18,7 +18,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $billController->addAmendment($billId, $amendment);
     header("Location: view_bill.php?id=$billId");
     exit();
+
+   
+
 }
+
+require_once '../views/header.php'; 
 ?>
 
 <!DOCTYPE html>
@@ -26,8 +31,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>Suggest an Amendment</title>
+    <link rel="stylesheet" href="../style.css"> 
 </head>
 <body>
+    <main class="amendment-page">
     <h2>Suggest an Amendment for: <?php echo htmlspecialchars($bill['title']); ?></h2>
     <form method="post">
         <label>Comment:</label><br>
@@ -48,5 +55,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <p>No amendments suggested yet.</p>
     <?php endif; ?>
     <a href="view_bill.php?id=<?php echo $billId; ?>">Back to Bill</a>
+    </main>
 </body>
 </html>
+
+
+<?php
+require_once '../views/footer.php'; 
+?>

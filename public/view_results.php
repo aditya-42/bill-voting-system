@@ -13,6 +13,9 @@ if (!$billId) {
 }
 
 $results = $billController->calculateVoteResults($billId);
+
+require_once '../views/header.php'; 
+
 ?>
 
 <!DOCTYPE html>
@@ -20,8 +23,10 @@ $results = $billController->calculateVoteResults($billId);
 <head>
     <meta charset="UTF-8">
     <title>Voting Results</title>
+    <link rel="stylesheet" href="../style.css"> 
 </head>
 <body>
+    <div class="voting-results-page">
     <h2>Voting Results</h2>
 
     <?php if ($results): ?>
@@ -49,5 +54,12 @@ $results = $billController->calculateVoteResults($billId);
     <?php endif; ?>
 
     <a href="dashboard.php">Back to Dashboard</a>
+
+    </div>
 </body>
 </html>
+
+
+<?php
+require_once '../views/footer.php'; 
+?>

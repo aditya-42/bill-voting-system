@@ -7,6 +7,8 @@ $billController = new BillController();
 
 $billId = $_GET['id'] ?? null;
 $bill = $billController->getBillById($billId);
+
+require_once '../views/header.php'; 
 ?>
 
 <!DOCTYPE html>
@@ -14,8 +16,10 @@ $bill = $billController->getBillById($billId);
 <head>
     <meta charset="UTF-8">
     <title>Suggest an Amendment</title>
+    <link rel="stylesheet" href="../style.css"> 
 </head>
 <body>
+    <main class="view-amendments-page">
     <h3>Amendments suggested by Reviewers</h3>
     <?php if (!empty($bill['amendments'])): ?>
         <ul>
@@ -29,6 +33,14 @@ $bill = $billController->getBillById($billId);
     <?php else: ?>
         <p>No amendments suggested yet.</p>
     <?php endif; ?>
-    <a href="list.php">Back to Bills</a>
+    <a class="back-link" href="list.php">Back to Bills</a>
+
+    </main>
 </body>
 </html>
+
+
+
+<?php
+require_once '../views/footer.php'; 
+?>

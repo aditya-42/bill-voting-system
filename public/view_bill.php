@@ -5,14 +5,17 @@ $billController = new BillController();
 $billId = $_GET['id'] ?? null;
 $bill = $billController->getBillById($billId);
 
+
+require_once '../views/header.php'; 
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<>
     <meta charset="UTF-8">
     <title><?php echo htmlspecialchars($bill['title']); ?></title>
-</head>
+    <link rel="stylesheet" href="../style.css"> 
+</>
 <body>
     <h2><?php echo htmlspecialchars($bill['title']); ?></h2>
     <p><?php echo nl2br(htmlspecialchars($bill['description'])); ?></p>
@@ -33,3 +36,8 @@ $bill = $billController->getBillById($billId);
     <a href="dashboard.php">Back to Dashboard</a>
 </body>
 </html>
+
+
+<?php
+require_once '../views/footer.php'; 
+?>

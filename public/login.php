@@ -13,6 +13,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $message = "Invalid username or password.";
     }
 }
+
+
+require_once '../views/header.php'; 
 ?>
 
 <!DOCTYPE html>
@@ -20,14 +23,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
+    <link rel="stylesheet" href="../style.css"> 
 </head>
 <body>
-    <h2>Login</h2>
-    <form method="post">
-        <label>Username: <input type="text" name="username" required></label><br>
-        <label>Password: <input type="password" name="password" required></label><br>
-        <button type="submit">Login</button>
-    </form>
-    <p><?php echo htmlspecialchars($message); ?></p>
+    <main class="login-page">
+        <h2>Login</h2>
+        <form method="post">
+            <label>Username: <input type="text" name="username" required></label><br>
+            <label>Password: <input type="password" name="password" required></label><br>
+            <button type="submit">Login</button>
+        </form>
+        <p><?php echo htmlspecialchars($message); ?></p>
+    </main>
 </body>
 </html>
+
+<?php
+require_once '../views/footer.php'; 
+?>

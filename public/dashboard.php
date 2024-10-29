@@ -4,6 +4,8 @@ AuthMiddleware::requireAuth();
 
 $userRole = $_SESSION['user']['role'];
 
+require_once '../views/header.php'; 
+
 
 ?>
 
@@ -12,8 +14,11 @@ $userRole = $_SESSION['user']['role'];
 <head>
     <meta charset="UTF-8">
     <title>Dashboard</title>
+    <link rel="stylesheet" href="../style.css"> 
 </head>
 <body>
+
+<main class="dashboard-page">
     <h1>Welcome <?php echo htmlspecialchars($_SESSION['user']['username']); ?></h1>
     <h2>Dashboard</h2>
 
@@ -44,6 +49,21 @@ $userRole = $_SESSION['user']['role'];
         <a href="bills.php">View Bills</a>
     </section>
 
+    <section>
+        <h3>View Bills</h3>
+        <a href="review_bills.php">Bills for Approvals</a>
+    </section>
+
+    
+
+
+
     <?php endif; ?>
+
+    </main>
 </body>
 </html>
+
+<?php
+require_once '../views/footer.php'; 
+?>

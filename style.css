@@ -1,0 +1,665 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text color */
+    padding: 15px 20px; /* Padding for header */
+}
+
+header nav {
+    display: flex; /* Use flexbox for navigation */
+    justify-content: space-between; /* Space between items */
+    align-items: center; /* Center items vertically */
+}
+
+header nav ul {
+    list-style-type: none; /* Remove bullet points */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    display: flex; /* Flex display for horizontal layout */
+}
+
+header nav ul li {
+    margin-right: 20px; /* Space between items */
+}
+
+header nav ul li a {
+    color: white; /* White link color */
+    text-decoration: none; /* Remove underline */
+    padding: 8px 12px; /* Padding for links */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s; /* Transition effect */
+}
+
+header nav ul li a:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+/* Main content styles */
+main {
+    padding: 20px; /* Padding for main content */
+}
+
+
+/* Styles specific to the login page */
+.login-page {
+    max-width: 400px; /* Max width for the form */
+    margin: 50px auto; /* Center the form */
+    background-color: white; /* White background for the form */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    padding: 20px; /* Padding inside the form */
+}
+
+.login-page h2 {
+    text-align: center; /* Center the heading */
+    color: #333; /* Dark gray for contrast */
+}
+
+.login-page label {
+    display: block; /* Block display for labels */
+    margin: 10px 0 5px; /* Spacing around labels */
+}
+
+.login-page input[type="text"],
+.login-page input[type="password"] {
+    width: 100%; /* Full width inputs */
+    padding: 10px; /* Padding inside inputs */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 5px; /* Rounded corners */
+    box-sizing: border-box; /* Include padding in width */
+}
+
+.login-page button {
+    width: 100%; /* Full width button */
+    padding: 10px; /* Padding for button */
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text color */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Transition for hover effect */
+}
+
+.login-page button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+
+
+/* Styles specific to the register page */
+.register-page {
+    max-width: 400px; /* Max width for the form */
+    margin: 50px auto; /* Center the form */
+    background-color: white; /* White background for the form */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    padding: 20px; /* Padding inside the form */
+}
+
+.register-page h2 {
+    text-align: center; /* Center the heading */
+    color: #333; /* Dark gray for contrast */
+}
+
+.register-page label {
+    display: block; /* Block display for labels */
+    margin: 10px 0 5px; /* Spacing around labels */
+}
+
+.register-page input[type="text"],
+.register-page input[type="password"],
+.register-page select {
+    width: 100%; /* Full width inputs */
+    padding: 10px; /* Padding inside inputs */
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 5px; /* Rounded corners */
+    box-sizing: border-box; /* Include padding in width */
+}
+
+.register-page button {
+    width: 100%; /* Full width button */
+    padding: 10px; /* Padding for button */
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text color */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Transition for hover effect */
+}
+
+.register-page button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+
+/* Styles specific to the home page */
+.home-page {
+    max-width: 600px; /* Max width for the content */
+    margin: 50px auto; /* Center the content */
+    background-color: white; /* White background for the content */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    padding: 20px; /* Padding inside the content */
+    text-align: center; /* Center text */
+}
+
+.home-page h1 {
+    color: #333; /* Dark gray for the heading */
+}
+
+.home-page p {
+    margin: 15px 0; /* Spacing for paragraphs */
+}
+
+.home-page a {
+    color: #4CAF50; /* Green link color */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Bold font */
+    transition: color 0.3s; /* Transition for hover effect */
+}
+
+.home-page a:hover {
+    color: #45a049; /* Darker green on hover */
+}
+
+
+/* Dashboard Page Specific Styles */
+/* Dashboard Page Specific Styles */
+.dashboard-page {
+    background-color: #f8f9fa; /* Light gray background */
+    padding: 20px; /* Padding around the main content */
+    border-radius: 8px; /* Rounded corners */
+    max-width: 800px; /* Maximum width of the dashboard content */
+    margin: 20px auto; /* Center the content */
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+}
+
+.dashboard-page h1 {
+    color: #333; /* Dark gray color for headings */
+    margin-bottom: 20px; /* Space below the heading */
+    text-align: center; /* Center align the heading */
+}
+
+.dashboard-page h2 {
+    color: #555; /* Medium gray color for subheadings */
+    margin-top: 30px; /* Space above the subheading */
+    font-size: 20px; /* Font size for subheadings */
+}
+
+.dashboard-page section {
+    margin-bottom: 20px; /* Space between sections */
+    padding: 15px; /* Padding inside sections */
+    background-color: #ffffff; /* White background for sections */
+    border-radius: 4px; /* Rounded corners for sections */
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1); /* Light shadow for sections */
+}
+
+.dashboard-page a {
+    display: inline-block; /* Allow spacing around the links */
+    margin-top: 10px; /* Space above the links */
+    background-color: #007bff; /* Blue background for links */
+    color: white; /* White text color */
+    padding: 10px 15px; /* Padding for links */
+    border-radius: 4px; /* Rounded corners for links */
+    text-decoration: none; /* Remove underline */
+    transition: background-color 0.3s; /* Smooth background color transition */
+}
+
+.dashboard-page a:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+
+
+/* Create Bill Page Specific Styles */
+/* Create Bill Page Specific Styles */
+.create-bill-page {
+    background-color: #f8f9fa; /* Light gray background for better contrast */
+    border-radius: 8px; /* Rounded corners */
+    padding: 30px; /* Increased padding around the main content */
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+    max-width: 600px; /* Max width for the form */
+    margin: 40px auto; /* Center the form on the page */
+    font-family: Arial, sans-serif; /* Set a clean font */
+}
+
+.create-bill-page h2 {
+    color: #333; /* Dark gray color for headings */
+    margin-bottom: 20px; /* Space below the heading */
+    font-size: 24px; /* Font size for headings */
+}
+
+.create-bill-page form {
+    display: flex; /* Flexbox for form layout */
+    flex-direction: column; /* Stack elements vertically */
+}
+
+.create-bill-page label {
+    margin-bottom: 8px; /* Space below labels */
+    font-weight: bold; /* Make labels bold */
+}
+
+.create-bill-page input[type="text"],
+.create-bill-page textarea {
+    padding: 12px; /* Padding inside input and textarea */
+    border: 1px solid #ced4da; /* Light gray border */
+    border-radius: 4px; /* Rounded corners */
+    margin-bottom: 15px; /* Space below inputs */
+    font-size: 16px; /* Font size for better readability */
+    width: 100%; /* Full width for inputs */
+    box-sizing: border-box; /* Include padding and border in element's total width */
+}
+
+.create-bill-page textarea {
+    resize: vertical; /* Allow vertical resizing for textarea */
+    height: 100px; /* Set a minimum height */
+}
+
+.create-bill-page button {
+    background-color: #007bff; /* Button background color */
+    color: white; /* Button text color */
+    border: none; /* Remove border */
+    padding: 12px; /* Padding for button */
+    border-radius: 5px; /* Rounded corners for button */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
+    font-size: 16px; /* Font size for buttons */
+    margin-top: 10px; /* Space above button */
+}
+
+.create-bill-page button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+    transform: translateY(-2px); /* Lift effect on hover */
+}
+
+.create-bill-page a {
+    display: inline-block; /* Allow margin around link */
+    margin-top: 15px; /* Space above link */
+    text-decoration: none; /* Remove underline */
+    color: #007bff; /* Link color */
+    font-size: 16px; /* Font size for links */
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+.create-bill-page a:hover {
+    color: #0056b3; /* Darker shade on hover */
+}
+
+.success-message {
+    color: green; /* Green color for success messages */
+    margin-bottom: 20px; /* Space below success message */
+    font-weight: bold; /* Make success message bold */
+}
+
+
+/* Bill List Page Specific Styles */
+/* Bill List Page Specific Styles */
+.bill-list-page {
+    background-color: #f8f9fa; /* Light gray background */
+    padding: 20px; /* Padding around the main content */
+    border-radius: 8px; /* Rounded corners */
+    max-width: 800px; /* Maximum width of the content */
+    margin: 20px auto; /* Center the content */
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+}
+
+.bill-list-page h2 {
+    color: #333; /* Dark gray color for headings */
+    margin-bottom: 20px; /* Space below the heading */
+    font-size: 24px; /* Font size for headings */
+    text-align: center; /* Center align the heading */
+}
+
+.bill-table {
+    width: 100%; /* Full width for the table */
+    border-collapse: collapse; /* Collapse borders */
+}
+
+.bill-table th, .bill-table td {
+    padding: 12px; /* Padding inside cells */
+    text-align: left; /* Align text to the left */
+    border: 1px solid #ced4da; /* Light gray border */
+}
+
+.bill-table th {
+    background-color: #007bff; /* Blue background for the header */
+    color: white; /* White text color */
+    text-transform: uppercase; /* Uppercase text for headers */
+}
+
+.bill-table tr:nth-child(even) {
+    background-color: #f2f2f2; /* Light gray for even rows */
+}
+
+.bill-table tr:hover {
+    background-color: #e9ecef; /* Highlight row on hover */
+}
+
+.action-links {
+    display: flex; /* Use flexbox for action links */
+    flex-wrap: wrap; /* Allow wrapping of links */
+}
+
+.action-link {
+    display: inline-block; /* Allow spacing around links */
+    margin-right: 15px; /* Space between links */
+    margin-bottom: 5px; /* Space below links */
+    padding: 6px 12px; /* Padding for links */
+    background-color: #007bff; /* Button background color */
+    color: white; /* Button text color */
+    border-radius: 4px; /* Rounded corners */
+    text-decoration: none; /* Remove underline */
+    transition: background-color 0.3s; /* Smooth background color transition */
+}
+
+.action-link:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+.action-link:active {
+    background-color: #004494; /* Even darker on click */
+}
+
+
+
+/* Edit Bill Page Specific Styles */
+/* Edit Bill Page Specific Styles */
+.edit-bill-page {
+    background-color: #f8f9fa; /* Light gray background */
+    padding: 20px; /* Padding around the main content */
+    border-radius: 8px; /* Rounded corners */
+    max-width: 600px; /* Maximum width of the content */
+    margin: 20px auto; /* Center the content */
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+    overflow: hidden; /* Prevents overflowing content */
+}
+
+.edit-bill-page h2 {
+    color: #333; /* Dark gray color for headings */
+    margin-bottom: 20px; /* Space below the heading */
+    font-size: 24px; /* Font size for headings */
+    text-align: center; /* Center align the heading */
+}
+
+.edit-bill-page form {
+    display: flex; /* Use flexbox for form layout */
+    flex-direction: column; /* Stack elements vertically */
+}
+
+.edit-bill-page label {
+    margin-bottom: 8px; /* Space below each label */
+    font-weight: bold; /* Bold labels for emphasis */
+}
+
+.edit-bill-page input[type="text"],
+.edit-bill-page textarea {
+    padding: 10px; /* Padding inside input fields */
+    border: 1px solid #ced4da; /* Light gray border */
+    border-radius: 4px; /* Rounded corners */
+    margin-bottom: 20px; /* Space below input fields */
+    font-size: 16px; /* Font size for input fields */
+    width: 100%; /* Full width for input fields */
+    box-sizing: border-box; /* Include padding and border in element's total width */
+}
+
+.edit-bill-page button {
+    background-color: #007bff; /* Blue button background */
+    color: white; /* White text color */
+    border: none; /* Remove border */
+    border-radius: 4px; /* Rounded corners */
+    padding: 10px 15px; /* Padding for button */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background-color 0.3s; /* Smooth background color transition */
+}
+
+.edit-bill-page button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+.edit-bill-page h3 {
+    margin-top: 30px; /* Space above the heading */
+    color: #333; /* Dark gray color for the subheading */
+}
+
+.edit-bill-page ul {
+    list-style-type: none; /* Remove bullet points */
+    padding-left: 0; /* Remove padding */
+}
+
+.edit-bill-page li {
+    margin-bottom: 10px; /* Space between list items */
+    padding: 10px; /* Padding around list items */
+    background-color: #e9ecef; /* Light gray background for list items */
+    border-radius: 4px; /* Rounded corners */
+}
+
+.back-link {
+    display: inline-block; /* Allow spacing around the link */
+    margin-top: 20px; /* Space above the link */
+    color: #007bff; /* Blue color for link */
+    text-decoration: none; /* Remove underline */
+}
+
+.back-link:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+
+
+/* Suggest an Amendment Page Specific Styles */
+.amendment-page {
+    background-color: #f8f9fa; /* Light gray background */
+    padding: 20px; /* Padding around the main content */
+    border-radius: 8px; /* Rounded corners */
+    max-width: 800px; /* Maximum width of the amendment content */
+    margin: 20px auto; /* Center the content */
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+}
+
+.amendment-page h2 {
+    color: #333; /* Dark gray color for headings */
+    margin-bottom: 20px; /* Space below the heading */
+    text-align: center; /* Center align the heading */
+}
+
+.amendment-page form {
+    margin-bottom: 20px; /* Space below the form */
+}
+
+.amendment-page label {
+    display: block; /* Block display for labels */
+    margin-bottom: 5px; /* Space below the label */
+    font-weight: bold; /* Bold text for labels */
+}
+
+.amendment-page textarea {
+    width: 100%; /* Full width of the container */
+    height: 100px; /* Height of the textarea */
+    padding: 10px; /* Padding inside the textarea */
+    border: 1px solid #ced4da; /* Light gray border */
+    border-radius: 4px; /* Rounded corners */
+    font-size: 16px; /* Font size */
+    resize: vertical; /* Allow vertical resizing */
+}
+
+.amendment-page button {
+    background-color: #007bff; /* Blue background for button */
+    color: white; /* White text color */
+    padding: 10px 15px; /* Padding for the button */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth background color transition */
+}
+
+.amendment-page button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+.amendment-page h3 {
+    margin-top: 30px; /* Space above the previous amendments heading */
+    color: #333; /* Dark gray color for subheadings */
+}
+
+.amendment-page ul {
+    list-style-type: none; /* Remove bullet points */
+    padding-left: 0; /* Remove left padding */
+}
+
+.amendment-page li {
+    margin-bottom: 10px; /* Space below each amendment */
+    background-color: #e9ecef; /* Light background for amendments */
+    padding: 10px; /* Padding inside amendment items */
+    border-radius: 4px; /* Rounded corners */
+}
+
+.amendment-page a {
+    display: inline-block; /* Allow spacing around the link */
+    margin-top: 20px; /* Space above the link */
+    text-decoration: none; /* Remove underline */
+    color: #007bff; /* Blue text color */
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+.amendment-page a:hover {
+    color: #0056b3; /* Darker shade on hover */
+}
+
+
+
+/* Review Bills Page Styles */
+.review-bills-page {
+    background-color: #f8f9fa; /* Light gray background */
+    padding: 20px; /* Padding around the main content */
+    border-radius: 8px; /* Rounded corners */
+    max-width: 900px; /* Maximum width of the content */
+    margin: 20px auto; /* Center the content */
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+}
+
+.review-bills-page h2 {
+    color: #333; /* Dark gray color for headings */
+    text-align: center; /* Center align the heading */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+.review-bills-page table {
+    width: 100%; /* Full width */
+    border-collapse: collapse; /* Collapse borders */
+}
+
+.review-bills-page th, .review-bills-page td {
+    padding: 12px; /* Padding for table cells */
+    border: 1px solid #dee2e6; /* Light gray border */
+    text-align: left; /* Left align text */
+}
+
+.review-bills-page th {
+    background-color: #007bff; /* Blue background for headers */
+    color: white; /* White text for headers */
+}
+
+.review-bills-page tr:nth-child(even) {
+    background-color: #f2f2f2; /* Zebra striping for even rows */
+}
+
+.review-bills-page button {
+    background-color: #28a745; /* Green background */
+    color: white; /* White text */
+    border: none; /* Remove border */
+    padding: 8px 12px; /* Padding for buttons */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth background transition */
+}
+
+.review-bills-page button:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+.review-bills-page a {
+    display: block; /* Make link a block for better spacing */
+    margin-top: 20px; /* Space above the link */
+    text-decoration: none; /* Remove underline */
+    color: #007bff; /* Blue text color */
+    text-align: center; /* Center align the link */
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+.review-bills-page a:hover {
+    color: #0056b3; /* Darker shade on hover */
+}
+
+
+/* Voting Results Page Styles */
+.voting-results-page {
+    background-color: #f8f9fa; /* Light gray background */
+    padding: 20px; /* Padding around the main content */
+    border-radius: 8px; /* Rounded corners */
+    max-width: 600px; /* Maximum width of the content */
+    margin: 20px auto; /* Center the content */
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+}
+
+.voting-results-page h2 {
+    color: #333; /* Dark gray color for headings */
+    text-align: center; /* Center align the heading */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+.voting-results-page table {
+    width: 100%; /* Full width */
+    border-collapse: collapse; /* Collapse borders */
+    margin-bottom: 20px; /* Space below the table */
+}
+
+.voting-results-page th, .voting-results-page td {
+    padding: 12px; /* Padding for table cells */
+    border: 1px solid #dee2e6; /* Light gray border */
+    text-align: left; /* Left align text */
+}
+
+.voting-results-page th {
+    background-color: #007bff; /* Blue background for headers */
+    color: white; /* White text for headers */
+}
+
+.voting-results-page tr:nth-child(even) {
+    background-color: #f2f2f2; /* Zebra striping for even rows */
+}
+
+.voting-results-page a {
+    display: inline-block; /* Make link inline-block */
+    margin-top: 20px; /* Space above the link */
+    text-decoration: none; /* Remove underline */
+    color: #007bff; /* Blue text color */
+    text-align: center; /* Center align the link */
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+.voting-results-page a:hover {
+    color: #0056b3; /* Darker shade on hover */
+}
+
+
+/* Footer styles */
+footer {
+    background-color: #333; /* Dark background */
+    color: white; /* White text color */
+    text-align: center; /* Center text */
+    padding: 10px 0; /* Padding for footer */
+    position: relative; /* Relative positioning */
+    bottom: 0; /* Stick to bottom */
+    width: 100%; /* Full width */
+}
+
+footer p {
+    margin: 0; /* Remove default margin */
+}

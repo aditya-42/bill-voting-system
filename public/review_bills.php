@@ -6,6 +6,8 @@ require_once __DIR__ . '/../controllers/BillController.php';
 $billController = new BillController();
 $billsUnderReview = $billController->getBillsByStatus('under review');
 
+
+require_once '../views/header.php'; 
 ?>
 
 <!DOCTYPE html>
@@ -13,8 +15,10 @@ $billsUnderReview = $billController->getBillsByStatus('under review');
 <head>
     <meta charset="UTF-8">
     <title>Review Bills</title>
+    <link rel="stylesheet" href="../style.css"> 
 </head>
 <body>
+    <main class="review-bills-page">
     <h2>Bills Under Review</h2>
     <?php if (empty($billsUnderReview)): ?>
         <p>No bills are currently under review.</p>
@@ -48,5 +52,12 @@ $billsUnderReview = $billController->getBillsByStatus('under review');
         </table>
     <?php endif; ?>
     <a href="dashboard.php">Back to Dashboard</a>
+
+    </main>
 </body>
 </html>
+
+
+<?php
+require_once '../views/footer.php'; 
+?>
