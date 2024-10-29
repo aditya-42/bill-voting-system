@@ -1,0 +1,103 @@
+[
+    {
+        "id": "671ff07819489",
+        "title": "a",
+        "description": "d",
+        "author": "mp1",
+        "status": "Passed",
+        "created_at": "2024-10-28 21:13:44",
+        "amendments": [
+            {
+                "comment": "aasa2",
+                "author": {
+                    "username": "reviewer",
+                    "role": "Reviewer"
+                },
+                "timestamp": "2024-10-28 21:43:38"
+            }
+        ],
+        "versions": [
+            {
+                "title": "a",
+                "description": "b",
+                "timestamp": "2024-10-28T21:13:53",
+                "author": "mp1"
+            },
+            {
+                "title": "a",
+                "description": "c",
+                "timestamp": "2024-10-28T21:14:31",
+                "author": "mp"
+            }
+        ],
+        "votes": {
+            "for": 1,
+            "against": 0,
+            "abstain": 0
+        }
+    },
+    {
+        "id": "67201d4924b91",
+        "title": "abc",
+        "description": "pqrstq",
+        "author": "mp",
+        "status": "Draft",
+        "created_at": "2024-10-29 00:24:57",
+        "amendments": [
+            {
+                "comment": "revise more",
+                "author": {
+                    "username": "reviewer",
+                    "role": "Reviewer"
+                },
+                "timestamp": "2024-10-29 00:37:24"
+            }
+        ],
+        "versions": [
+            {
+                "title": "abc",
+                "description": "pqr",
+                "timestamp": "2024-10-29T00:26:56",
+                "author": "mp"
+            },
+            {
+                "title": "abc",
+                "description": "pqrst",
+                "timestamp": "2024-10-29T00:33:59",
+                "author": "mp1"
+            }
+        ]
+    },
+    {
+        "id": "6720272ae65e1",
+        "title": "new bill 2",
+        "description": "desc...changes done by mp",
+        "author": "mp3",
+        "status": "Draft",
+        "created_at": "2024-10-29 01:07:06",
+        "amendments": [
+            {
+                "comment": "make more changes",
+                "author": {
+                    "username": "reviewer",
+                    "role": "Reviewer"
+                },
+                "timestamp": "2024-10-29 01:12:35"
+            }
+        ],
+        "versions": [
+            {
+                "title": "new bill",
+                "description": "desc",
+                "timestamp": "2024-10-29T01:07:59",
+                "author": "mp3"
+            },
+            {
+                "title": "new bill 2",
+                "description": "desc",
+                "timestamp": "2024-10-29T01:09:09",
+                "author": "mp"
+            }
+        ]
+    }
+]
