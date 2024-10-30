@@ -649,6 +649,55 @@ main {
 }
 
 
+/* //vote page  */
+
+.vote-page {
+    background-color: #f4f4f4; /* Light background color */
+    padding: 20px; /* Add some padding */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    max-width: 600px; /* Limit the maximum width */
+    margin: 20px auto; /* Center the page */
+}
+
+.vote-page h2 {
+    font-size: 24px; /* Font size for the heading */
+    margin-bottom: 20px; /* Space below the heading */
+    color: #333; /* Dark text color */
+}
+
+.vote-page form {
+    display: flex; /* Flexbox for button alignment */
+    justify-content: space-around; /* Evenly distribute buttons */
+    margin-bottom: 20px; /* Space below the form */
+    border: 2px solid red;
+}
+
+.vote-page form button {
+    background-color: #007bff; /* Button color */
+    color: white; /* Button text color */
+    border: none; /* No border */
+    padding: 10px 20px; /* Padding for buttons */
+    border-radius: 5px; /* Rounded corners for buttons */
+    cursor: pointer; /* Pointer cursor */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+.vote-page button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+.vote-page a {
+    color: #007bff; /* Link color */
+    text-decoration: none; /* No underline */
+}
+
+.vote-page a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+
+
 /* Footer styles */
 footer {
     background-color: #333; /* Dark background */

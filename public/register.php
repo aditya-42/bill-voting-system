@@ -1,17 +1,21 @@
 <?php
+
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+
 require_once __DIR__ . '/../controllers/AuthController.php';
 
 $authController = new AuthController();
 $message = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $registrationSuccess = $authController->register($_POST['username'], $_POST['password'], $_POST['role']);
-    if ($registrationSuccess) {
-        // Redirect with a success message
-        header("Location: login.php?message=Registration successful! Please log in.");
+    $result = $authController->register($_POST['username'], $_POST['password'], $_POST['role']);
+    if ($result === "Registration successful.") {
+        header("Location: login.php?message=" . urlencode($result));
         exit();
     } else {
-        $message = "Registration failed. Please try again.";
+        $message = $result; // This will contain the error message
     }
 }
 

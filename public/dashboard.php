@@ -50,7 +50,7 @@ require_once '../views/header.php';
     </section>
 
     <section>
-        <h3>View Bills</h3>
+        <h3>Approve Bills</h3>
         <a href="review_bills.php">Bills for Approvals</a>
     </section>
 

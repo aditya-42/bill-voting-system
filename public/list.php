@@ -40,13 +40,22 @@ require_once '../views/header.php';
                         <td><?php echo htmlspecialchars(ucwords(strtolower($bill['status']))); ?></td>
                         <td>
                             <div class="action-links">
-                                <a class="action-link" href="edit.php?id=<?php echo htmlspecialchars($bill['id']); ?>">Edit</a>
-                                <a class="action-link" href="view_amendment.php?id=<?php echo htmlspecialchars($bill['id']); ?>">View Amendments</a>
-                                <a class="action-link" href="amend.php?id=<?php echo htmlspecialchars($bill['id']); ?>">Amend</a>
-                                <a class="action-link" href="submit_bill.php?id=<?php echo htmlspecialchars($bill['id']); ?>">Submit for Review</a>
-                                <a class="action-link" href="vote.php?id=<?php echo htmlspecialchars($bill['id']); ?>">Vote</a>
-                                <a class="action-link" href="start_vote.php?id=<?php echo htmlspecialchars($bill['id']); ?>">Start Vote</a>
-                                <a class="action-link" href="view_results.php?id=<?php echo htmlspecialchars($bill['id']); ?>">View Results</a>
+                                <?php if ($userRole === 'Member of Parliament' || $userRole === 'Administrator'): ?>
+                                    <a class="action-link" href="edit.php?id=<?php echo htmlspecialchars($bill['id']); ?>">Edit</a>
+                                    <a class="action-link" href="view_amendment.php?id=<?php echo htmlspecialchars($bill['id']); ?>">View Amendments</a>
+                                    <a class="action-link" href="vote.php?id=<?php echo htmlspecialchars($bill['id']); ?>">Vote</a>
+                                <?php endif; ?>
+
+                                <?php if ($userRole === 'Reviewer' || $userRole === 'Administrator'): ?>
+                                    <a class="action-link" href="amend.php?id=<?php echo htmlspecialchars($bill['id']); ?>">Amend</a>
+                                    <a class="action-link" href="view_amendment.php?id=<?php echo htmlspecialchars($bill['id']); ?>">View Amendments</a>
+                                <?php endif; ?>
+
+                                <?php if ($userRole === 'Administrator'): ?>
+                                    <a class="action-link" href="submit_bill.php?id=<?php echo htmlspecialchars($bill['id']); ?>">Submit for Review</a>
+                                    <a class="action-link" href="start_vote.php?id=<?php echo htmlspecialchars($bill['id']); ?>">Start Vote</a>
+                                    <a class="action-link" href="view_results.php?id=<?php echo htmlspecialchars($bill['id']); ?>">View Results</a>
+                                <?php endif; ?>
                             </div>
                         </td>
                     </tr>
@@ -54,8 +63,6 @@ require_once '../views/header.php';
             </tbody>
         </table>
     </main>
-
-  
 </body>
 </html>
 
