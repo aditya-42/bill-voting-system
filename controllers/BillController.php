@@ -6,7 +6,6 @@ class BillController {
 
     public function __construct() {
         $this->billRepo = new BillRepository();
-        $this->billRepo = new BillRepository(); $this->billsFile = __DIR__ . '/../data/bills.json';
     }
 
     public function createBill($title, $description, $author) {
@@ -17,7 +16,9 @@ class BillController {
             'author' => $author,
             'status' => 'Draft',
             'created_at' => date('Y-m-d H:i:s'),
-            'amendments' => []
+            'amendments' => [],
+            'votes' => ['for' => 0, 'against' => 0, 'abstain' => 0],
+            'versions' => []
         ];
         $this->billRepo->saveBill($bill);
         return $bill;
@@ -27,149 +28,104 @@ class BillController {
         return $this->billRepo->getAllBills();
     }
 
-    public function getBill($id) {
+    public function getBillById($id) {
         return $this->billRepo->getBillById($id);
     }
 
     public function editBill($billId, $title, $description, $author) {
-        $bills = $this->getAllBills();
-        foreach ($bills as &$bill) {
-            if ($bill['id'] == $billId) {
-                $bill['versions'][] = [
-                    'title' => $bill['title'],
-                    'description' => $bill['description'],
-                    'timestamp' => date('Y-m-d\TH:i:s'),
-                    'author' => $author
-                ];
-
-                $bill['title'] = $title;
-                $bill['description'] = $description;
-                break;
-            }
+        $bill = $this->billRepo->getBillById($billId);
+        if ($bill) {
+            $bill['versions'][] = [
+                'title' => $bill['title'],
+                'description' => $bill['description'],
+                'timestamp' => date('Y-m-d\TH:i:s'),
+                'author' => $author
+            ];
+            $bill['title'] = $title;
+            $bill['description'] = $description;
+            $this->billRepo->updateBill($bill);
         }
-        file_put_contents($this->billsFile, json_encode($bills, JSON_PRETTY_PRINT));
     }
 
     public function addAmendment($billId, $amendment) {
-    $bills = $this->getAllBills();
-    foreach ($bills as &$bill) {
-        if ($bill['id'] == $billId) {
+        $bill = $this->billRepo->getBillById($billId);
+        if ($bill) {
             $bill['amendments'][] = $amendment;
-            break;
+            $this->billRepo->updateBill($bill);
         }
-    }
-        file_put_contents($this->billsFile, json_encode($bills, JSON_PRETTY_PRINT));
     }
 
     public function getBillsWithPendingAmendments() {
-        $bills = $this->getAllBills();
-        $pendingAmendments = [];
-
-        foreach ($bills as $bill) {
-            foreach ($bill['amendments'] as $amendment) {
-                if ($amendment['status'] === 'Pending') {
-                    $pendingAmendments[] = $bill;
-                    break;
-                }
-            }
-        }
-
-        return $pendingAmendments;
-    }
-
-     public function getBillById($id) {
-        $bills = $this->getAllBills();
-        foreach ($bills as $bill) {
-            if ($bill['id'] == $id) {
-                return $bill;
-            }
-        }
-        return null;
+        $bills = $this->billRepo->getAllBills();
+        return array_filter($bills, function($bill) {
+            return !empty(array_filter($bill['amendments'], function($amendment) {
+                return $amendment['status'] === 'Pending';
+            }));
+        });
     }
 
     public function submitForReview($billId) {
-    $bills = $this->getAllBills();
-    foreach ($bills as &$bill) {
-        if ($bill['id'] == $billId) {
+        $bill = $this->billRepo->getBillById($billId);
+        if ($bill) {
             $bill['status'] = 'under review';
-            break;
+            $this->billRepo->updateBill($bill);
         }
-    }
-    file_put_contents($this->billsFile, json_encode($bills, JSON_PRETTY_PRINT));
     }
 
     public function approveBill($billId) {
-    $bills = $this->getAllBills();
-    foreach ($bills as &$bill) {
-        if ($bill['id'] == $billId) {
+        $bill = $this->billRepo->getBillById($billId);
+        if ($bill) {
             $bill['status'] = 'approved';
-            break;
+            $this->billRepo->updateBill($bill);
         }
     }
-    file_put_contents($this->billsFile, json_encode($bills, JSON_PRETTY_PRINT));
-    }   
 
     public function rejectBill($billId) {
-    $bills = $this->getAllBills();
-    foreach ($bills as &$bill) {
-        if ($bill['id'] == $billId) {
+        $bill = $this->billRepo->getBillById($billId);
+        if ($bill) {
             $bill['status'] = 'rejected';
-            break;
+            $this->billRepo->updateBill($bill);
         }
-    }
-    file_put_contents($this->billsFile, json_encode($bills, JSON_PRETTY_PRINT));
     }
 
     public function getBillsByStatus($status) {
-    $bills = $this->getAllBills();
-    return array_filter($bills, function($bill) use ($status) {
-        return $bill['status'] === $status;
-    });
-}
+        return $this->billRepo->getBillsByStatus($status);
+    }
+
     public function initiateVoting($billId) {
-    $bills = $this->getAllBills();
-    foreach ($bills as &$bill) {
-        if ($bill['id'] == $billId && $bill['status'] === 'approved') {
+        $bill = $this->billRepo->getBillById($billId);
+        if ($bill && $bill['status'] === 'approved') {
             $bill['status'] = 'voting';
             $bill['votes'] = ['for' => 0, 'against' => 0, 'abstain' => 0];
-            break;
+            $this->billRepo->updateBill($bill);
         }
     }
-    file_put_contents($this->billsFile, json_encode($bills, JSON_PRETTY_PRINT));
-}
 
-public function recordVote($billId, $vote) {
-    $bills = $this->getAllBills();
-    foreach ($bills as &$bill) {
-        if ($bill['id'] == $billId && $bill['status'] === 'voting') {
+    public function recordVote($billId, $vote) {
+        $bill = $this->billRepo->getBillById($billId);
+        if ($bill && $bill['status'] === 'voting') {
             $bill['votes'][$vote]++;
-            break;
+            $this->billRepo->updateBill($bill);
         }
     }
-    file_put_contents($this->billsFile, json_encode($bills, JSON_PRETTY_PRINT));
-}
 
-public function updateBillStatus($billId, $status) {
-    $bills = $this->getAllBills();
-    foreach ($bills as &$bill) {
-        if ($bill['id'] == $billId && $bill['status'] === 'voting') {
+    public function updateBillStatus($billId, $status) {
+        $bill = $this->billRepo->getBillById($billId);
+        if ($bill && $bill['status'] === 'voting') {
             $bill['status'] = $status;
-            break;
+            $this->billRepo->updateBill($bill);
         }
     }
-    file_put_contents($this->billsFile, json_encode($bills, JSON_PRETTY_PRINT));
-}
 
-
-public function calculateVoteResults($billId) {
-    $bills = $this->getAllBills();
-    $results = ['For' => 0, 'Against' => 0, 'Abstain' => 0, 'status' => ''];
-
-    foreach ($bills as $bill) {
-        if ($bill['id'] === $billId) {
-            $results['For'] = $bill['votes']['for'] ?? 0;
-            $results['Against'] = $bill['votes']['against'] ?? 0;
-            $results['Abstain'] = $bill['votes']['abstain'] ?? 0;
+    public function calculateVoteResults($billId) {
+        $bill = $this->billRepo->getBillById($billId);
+        if ($bill) {
+            $results = [
+                'For' => $bill['votes']['for'] ?? 0,
+                'Against' => $bill['votes']['against'] ?? 0,
+                'Abstain' => $bill['votes']['abstain'] ?? 0,
+                'status' => ''
+            ];
 
             if ($results['For'] > $results['Against']) {
                 $results['status'] = 'Passed';
@@ -182,12 +138,10 @@ public function calculateVoteResults($billId) {
                 $bill['status'] = 'Pending';
             }
 
+            $this->billRepo->updateBill($bill);
             return $results;
         }
+        return null;
     }
-    return null;
-}
-
-
 }
 ?>
