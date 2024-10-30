@@ -65,8 +65,37 @@ Secure session
 1.Clone the repository under XAMPP/htdocs folder using git clone https://github.com/aditya-42/bill-voting-system.git 
 
 2.Start the XAMPP server and Php My Admin for database 
+ 
+3.Create database 'votingsystemdb' and create table user and bills under this database using below query 
 
-3.Open http://localhost/bill-voting-system/public/ 
+
+ 
+USER
+
+CREATE TABLE users (
+id INT AUTO_INCREMENT PRIMARY KEY, 
+username VARCHAR(50) UNIQUE NOT NULL,  
+password VARCHAR(255) NOT NULL,  
+role VARCHAR(50) NOT NULL
+);
+
+Bills
+
+CREATE TABLE bills (    
+id VARCHAR(255) PRIMARY KEY, 
+title VARCHAR(255) NOT NULL,   
+description TEXT,  
+author VARCHAR(100),  
+status VARCHAR(50),  
+created_at DATETIME,  
+amendments TEXT,  
+votes TEXT,   
+versions TEXT 
+);
+
+
+4.Open http://localhost/bill-voting-system/public/
+
 
 
 
