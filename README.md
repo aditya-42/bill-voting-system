@@ -1,20 +1,20 @@
 Federal Parliament of Canada Legislative Bill Management System
 
-#Project Overview
+# Project Overview
 The entire legislative bill lifecycle, from writing to final approval, is managed by this software system, which supports the Canadian Federal Parliament's legislative process. It stores data in JSON files using the Repository pattern and SOLID principles, and it manages state using PHP sessions and cookies.
 
-#System Architecture
+# System Architecture
 The system follows a multi-tier architecture using the MVC (Model-View-Controller) pattern:
 Model: Represents the data and business logic
 View: Handles the presentation layer
 Controller: Manages the flow between Model and View
 
-#Key Components:
+# Key Components:
 User Authentication and Role Management
 Bill Management System
 Voting System
 
-#Authentication and Session Management
+# Authentication and Session Management
 Uses PHP sessions for maintaining user login state
 Role-based access control (Member of Parliament, Reviewer, Administrator)
 
@@ -44,7 +44,7 @@ Password hashing
 Input validation and sanitization
 Secure session
 
-#Project Setup
+# Project Setup
 1.Clone the repository under XAMPP/htdocs folder using git clone https://github.com/aditya-42/bill-voting-system.git 
 2.Start the XAMPP server and Php My Admin for database 
 3.Open http://localhost/bill-voting-system/public/ 
