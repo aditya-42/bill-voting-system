@@ -20,33 +20,52 @@ Role-based access control (Member of Parliament, Reviewer, Administrator)
 
 # Key Functionalities
 1.User Management
+
 Registration
+
 Login/Logout
+
 Role assignment
 
 2.Bill Management
+
 Create new bills
+
 View and edit bills
+
 Version tracking
+
 Amendment suggestions
+
 Approval workflow
 
 3.Voting System
+
 Initiate voting sessions
+
 Cast votes
+
 Record and calculate results
 
+
 4.Reporting
+
 User dashboards
 
 5.Security Considerations
+
 Password hashing
+
 Input validation and sanitization
+
 Secure session
 
 # Project Setup
+
 1.Clone the repository under XAMPP/htdocs folder using git clone https://github.com/aditya-42/bill-voting-system.git 
+
 2.Start the XAMPP server and Php My Admin for database 
+
 3.Open http://localhost/bill-voting-system/public/ 
 
 
