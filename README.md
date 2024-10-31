@@ -115,7 +115,7 @@ Vote
 
 Aditya Purohit - Backend Functionality
 
-Smith Dias - UI design and Forntend
+Smith Dias - UI design and Frontend
  
 
 
