@@ -111,8 +111,11 @@ Vote
 ![image](https://github.com/user-attachments/assets/7371a39c-513f-44fd-a80e-d10132900457)
 
 
- 
+# Members
 
+Aditya Purohit - Backend Functionality
+
+Smith Dias - UI design and Forntend
  
 
 
